@@ -1,11 +1,10 @@
-import sys
-from cellSegmentation_v8.logger import logging
-from cellSegmentation_v8.exception import AppException
-logging.info("app")
+import sys,os
+from cellSegmentation_v8.pipeline.training_pipeline import TrainPipeline
+from cellSegmentation_v8.utils.main_utils import decodeImage, encodeImageIntoBase64
+from flask import Flask, request, jsonify, render_template,Response
+from flask_cors import CORS, cross_origin
 
-try:
-    pass
-    #a = 4/'6'
-except Exception as e:
-    
-    raise AppException(e,sys)
+
+obj = TrainPipeline()
+obj.run_pipeline()
+print ("training done")
