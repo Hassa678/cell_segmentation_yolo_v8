@@ -3,7 +3,7 @@ from cellSegmentation_v8.logger import logging
 from cellSegmentation_v8.exception import AppException
 from cellSegmentation_v8.components.data_ingestion import DataIngestion
 from cellSegmentation_v8.components.data_validation import DataValidation
-
+from cellSegmentation_v8.components.model_trainer import ModelTrainer
 
 from cellSegmentation_v8.entity.config_entity import (DataIngestionConfig,
                                                  DataValidationConfig,
@@ -66,7 +66,21 @@ class TrainPipeline:
         except Exception as e:
             raise AppException(e, sys) from e
 
+    def start_model_trainer(self
+    ) -> ModelTrainerArtifact:
+        try:
+            model_trainer = ModelTrainer(
+                model_trainer_config=self.model_trainer_config,
+            )
+            model_trainer_artifact = model_trainer.initiate_model_trainer()
+            return model_trainer_artifact
 
+        except Exception as e:
+            raise AppException(e, sys)
+        
+        
+        
+        
 
     def run_pipeline (self) -> None:
         try:
@@ -75,6 +89,13 @@ class TrainPipeline:
             data_validation_artifact = self.start_data_validation(
                 data_ingestion_artifact=data_ingestion_artifact
             )
+            
+            if data_validation_artifact.validation_status == True:
+                model_trainer_artifact = self.start_model_trainer()
+            
+            else:
+                raise Exception("Your data is not in correct format")
+                       
         except Exception as e:
             raise AppException(e, sys)
 
