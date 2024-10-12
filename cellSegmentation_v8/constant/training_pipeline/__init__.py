@@ -7,7 +7,7 @@ DATA_INGESTION_DIR_NAME: str = "data_ingestion"
 
 DATA_INGESTION_FEATURE_STORE_DIR: str = "feature_store"
 
-DATA_DOWNLOAD_URL: str = "https://drive.google.com/file/d/1_fvxXw7lWuDGmYwjhLkBhP_--7bqKwMv/view?usp=sharing"
+DATA_DOWNLOAD_URL: str = "https://drive.google.com/file/d/1TJ60kdD17JXeAvKiVhcFP53slG2IooA6/view?usp=sharing"
 
 
 
@@ -31,7 +31,7 @@ MODEL_TRAINER_DIR_NAME: str = "model_trainer"
 
 MODEL_TRAINER_PRETRAINED_WEIGHT_NAME: str = "yolov8s-seg.pt"
 
-MODEL_TRAINER_NO_EPOCHS: int = 1
+MODEL_TRAINER_NO_EPOCHS: int = 10
 
 MODEL_TRAINER_BATCH_SIZE: int = 16
 
