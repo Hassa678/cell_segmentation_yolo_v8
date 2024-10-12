@@ -45,6 +45,7 @@ class ModelTrainer:
 
             # Move the best model file to the designated directory
             shutil.copy(str(source_path), str(destination_path))
+            shutil.copy(str(source_path), Path(r"C:\cell_segmentation_yolo_v8\best.pt"))
 
             # Cleaning up unnecessary files
             files_to_remove = [

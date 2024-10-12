@@ -43,7 +43,7 @@ def predictRoute():
 
         yolo_command = [
             "yolo", "task=segment", "mode=predict",
-            "model=artifacts/model_trainer/best.pt",
+            "model=best.pt",
             "conf=0.1", f"source=data/{clApp.filename}", "save=true"
         ]
         
