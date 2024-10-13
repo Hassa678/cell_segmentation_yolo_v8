@@ -78,7 +78,7 @@ open up you local host and port
 
 	
 ## 3. Create ECR repo to store/save docker image
-    - Save the URI: 003270868633.dkr.ecr.us-east-1.amazonaws.com/cellsegmentation
+    - Save the URI: 003270868633.dkr.ecr.us-east-1.amazonaws.com/cell2
 
 	
 ## 4. Create EC2 machine (Ubuntu) 
