@@ -4,7 +4,5 @@ notebook==7.0.0a7
 gdown
 flask-cors
 flask
-shutil
-subprocess
 ultralytics==8.0.28
 -e .
